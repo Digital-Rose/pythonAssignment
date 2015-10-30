@@ -1,7 +1,8 @@
-import twitter,datetime,time
+import twitter,datetime,time,schedule
 import sqlite3
 from os import system
 creds = []
+tweets = []
 user = 78169161
 timehms = time.strftime("%H:%M:%S")
 
@@ -12,9 +13,10 @@ creds = file.readline().strip().split(",")
 # Store secret codes
 api = twitter.Api(creds[0],creds[1],creds[2],creds[3])
 statuses = api.GetUserTimeline(user)
-saythis = statuses[0].text
-system('say ' + saythis)
 print (statuses[0].text)
+#saythis = statuses[0].text
+#system('say ' + saythis)
+
 
 #Database Code
 def getHistory():
