@@ -4,7 +4,7 @@ from graphics import *
 import numpy as np
 window = GraphWin("Megs Data Visualisation", 700, 500)
 
-#Arrays
+#Arrays/Lists
 floats=[]
 circles = []
 labels = ["<40","40-50","50-60","60-70","70+"]
@@ -22,7 +22,7 @@ text.setFace('arial')
 text.setSize(25)
 text.draw(window)
 
-# Read in and print out the data in the data file
+# Read in the data from the data file, puts data into an array
 datafile = open("data.txt",'r')
 lines = datafile.readlines();
 for line in lines:
