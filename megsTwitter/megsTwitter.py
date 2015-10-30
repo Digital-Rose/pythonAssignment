@@ -14,9 +14,8 @@ creds = file.readline().strip().split(",")
 api = twitter.Api(creds[0],creds[1],creds[2],creds[3])
 statuses = api.GetUserTimeline(user)
 print (statuses[0].text)
-#saythis = statuses[0].text
-#system('say ' + saythis)
-
+saythis = statuses[0].text
+system('say ' + saythis)
 
 #Database Code
 def getHistory():
@@ -44,6 +43,7 @@ def tweeter():
 		print "I've already looked at " + row[0]
 
 schedule.every(10).seconds.do(tweeter)
+# uncomment below to tweet every hour
 #schedule.every(1).hour.do(tweeter)
 
 while True:
